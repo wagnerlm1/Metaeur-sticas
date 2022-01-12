@@ -68,11 +68,15 @@ def procura_vizinhos(links, terms, vert):
     """
 
     Args:
-        links: dataframe com as coordenadas
-        terms: lista de
-        vert:
+        links: dataframe com as coordenadas e pesos de cada aresta
+        terms: lista de terminais
+        vert: vertice para olhar os vizinhos
 
     Returns:
+        vizinhos: LISTA de INDEX das arestas que saem de vert do dataframe links
+        com_terms: LISTA de INDEX das arestas com terminais
+        nome_vizinhos: LISTA com os nomes dos vértices vizinhos a vert
+
 
     """
     # Verifica se quais são os vizinhos do vertice (vert) em questão
@@ -92,6 +96,16 @@ def procura_vizinhos(links, terms, vert):
 
 
 def seleciona_melhor_vertice(links, nodes, vert_state):
+    """
+
+    Args:
+        links: dataframe com as coordenadas e pesos de cada aresta
+        nodes: lista com os INDEX das opções de arestas para selecionar a "melhor"
+        vert_state: é o vertice em que o código está atualmente, logo antes de entrar na função
+
+    Returns:
+
+    """
     # Se tiver um terminal
     if len(nodes) == 1:
         # O terminal vira o vert e vai pro próximo laço
